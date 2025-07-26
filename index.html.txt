@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Casa | Mexican-Indian Fusion Chai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* ===== CORE STYLES ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: #faf3e0; /* Chai cream */
+            color: #5D4037; /* Spice brown */
+        }
+        
+        /* ===== SPLIT-SCREEN HERO ===== */
+        .hero {
+            display: flex;
+            height: 100vh;
+        }
+        .india-side, .mexico-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 5%;
+            transition: all 0.8s ease;
+        }
+        .india-side {
+            background: url('https://i.imgur.com/XtQZyYq.jpg') center/cover; /* Mughal palace */
+            color: #D4AF37; /* Gold */
+        }
+        .mexico-side {
+            background: url('https://i.imgur.com/8cJbOoW.jpg') center/cover; /* Oaxacan market */
+            color: #C14533; /* Terracotta */
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .scroll-prompt {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            animation: pulse 2s infinite;
+        }
+        
+        /* ===== FUSION MENU SECTION ===== */
+        .fusion-section {
+            padding: 100px 10%;
+            text-align: center;
+        }
+        .fusion-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 50px;
+            color: #B76E79; /* Fusion pink */
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        .menu-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO SPLIT-SCREEN -->
+    <section class="hero">
+        <div class="india-side">
+            <h1>Agra</h1>
+            <p>Mughal elegance meets chai tradition</p>
+        </div>
+        <div class="mexico-side">
+            <h1>Oaxaca</h1>
+            <p>Vibrant flavors meet bold spirits</p>
+        </div>
+        <div class="scroll-prompt">▼ Scroll to Blend Cultures ▼</div>
+    </section>
+    
+    <!-- FUSION MENU -->
+    <section class="fusion-section">
+        <h2 class="fusion-title">One Cup, Two Cultures</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://i.imgur.com/zY1dG7m.jpg" alt="Churro Chai Latte">
+                <h3>Churro Chai Latte</h3>
+                <p>Kashmiri saffron chai + Mexican cinnamon infusion</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://i.imgur.com/5LxXq9J.jpg" alt="Naan Quesadilla">
+                <h3>Naan Quesadilla</h3>
+                <p>Tandoori naan stuffed with Oaxaca cheese & masala veggies</p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Scroll animation to "blend" cultures
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const indiaSide = document.querySelector('.india-side');
+            const mexicoSide = document.querySelector('.mexico-side');
+            
+            if (scrollY < 500) {
+                indiaSide.style.opacity = 1 - scrollY / 1000;
+                mexicoSide.style.opacity = 1 - scrollY / 1000;
+            }
+        });
+    </script>
+</body>
+</html>
